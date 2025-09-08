@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  interbanking-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: interbanking-empresa-api
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_DATASOURCE_URL=jdbc:h2:mem:testdb
+      - SPRING_DATASOURCE_USERNAME=sa
+      - SPRING_DATASOURCE_PASSWORD=
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+      - interbanking-network
+
+networks:
+  interbanking-network:
+    driver: bridge

@@ -1,0 +1,11 @@
+target/
+!target/interbanking-empresa-api-1.0-SNAPSHOT.jar
+.git
+.gitignore
+README.md
+Dockerfile
+.dockerignore
+*.iml
+.idea/
+.vscode/
+*.log
