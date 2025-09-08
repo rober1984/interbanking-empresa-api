@@ -26,7 +26,7 @@ API REST para la gestión de empresas y adhesiones al sistema interbancario, des
 
 ```bash
 # 1. Clonar el repositorio
-git clone <repository-url>
+git clone https://github.com/rober1984/interbanking-empresa-api
 cd interbanking-empresa-api
 
 # 2. Compilar y ejecutar
